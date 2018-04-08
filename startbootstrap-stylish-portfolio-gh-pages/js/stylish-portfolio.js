@@ -23,6 +23,7 @@
     }
   });
 
+
   // Closes responsive menu when a scroll trigger link is clicked
   $('#sidebar-wrapper .js-scroll-trigger').click(function() {
     $("#sidebar-wrapper").removeClass("active");
@@ -45,6 +46,7 @@ $("#startbtn").click(function (event) {
     $("#timerscreen").show();
     $("#startscreen").hide();
     var timeleft = 4;
+
     /*var downloadTimer = setInterval(function(){
     
     console.log(timeleft);
@@ -61,18 +63,49 @@ $("#startbtn").click(function (event) {
       console.log(timeleft);
       $("#countdowntimer").html(timeleft);
       setTimeout(function(){
-       if(timeleft > 0)
+       if(timeleft > 1)
        { 
         f();
        }
+       else if(timeleft==1)
+      {
+        $("#countdowntimer").hide();
+      }
       },1000);
+      
     }
-
+    
     f();
+
+    
 });
 
 
 })(jQuery); // End of use strict
+
+
+var numberOfSongs = 3;
+var sound = new Array(numberOfSongs)
+sound[0]= "music/ChibiNinja.mp3";
+sound[1]= "music/Arpanauts.mp3";
+sound[2]= "music/AllofUs.mp3";
+function randomNumber()
+{
+  var randomLooper = -1
+  while (randomLooper < 0 || randomLooper > numberOfSongs || isNaN(randomLooper))
+  { 
+    randomLooper = parseInt(Math.random()*(numberOfSongs));
+  }
+  return randomLooper;
+}
+var randomAudio=$("#random3");
+$("#random3").attr("src", sound[randomNumber()]);
+randomAudio[0].play();
+
+var randomsub = randomNumber()
+
+var soundFile = sound[randomsub]
+document.write ('<EMBED src= "' + soundFile + '" hidden=true autostart=true loop=true>');
 
 // Disable Google Maps scrolling
 // See http://stackoverflow.com/a/25904582/1607849
