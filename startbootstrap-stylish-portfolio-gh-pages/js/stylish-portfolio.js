@@ -44,7 +44,7 @@ $("#startbtn").click(function (event) {
   event.preventDefault();
     $("#timerscreen").show();
     $("#startscreen").hide();
-    var timeleft = 5;
+    var timeleft = 4;
     /*var downloadTimer = setInterval(function(){
     
     console.log(timeleft);
@@ -53,16 +53,22 @@ $("#startbtn").click(function (event) {
     if(timeleft <= 0)
         clearInterval(downloadTimer);
     timeleft--;
-    },1000);*/
-while (timeleft>=0)
-{console.log(timeleft);
-    $("#countdowntimer").html(timeleft);
-    setTimeout(function(){
-timeleft--;
-console.log ("minus1");
-    },1000)
+    },1000);*/  
 
-}
+    function f()
+    {
+      timeleft--;
+      console.log(timeleft);
+      $("#countdowntimer").html(timeleft);
+      setTimeout(function(){
+       if(timeleft > 0)
+       { 
+        f();
+       }
+      },1000);
+    }
+
+    f();
 });
 
 

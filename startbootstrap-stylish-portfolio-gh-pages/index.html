@@ -28,7 +28,7 @@
     <a class="menu-toggle rounded" href="#">
       <i class="fa fa-bars"></i>
     </a>
-    <nav id="sidebar-wrapper">
+    <!--<nav id="sidebar-wrapper">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
           <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
@@ -49,7 +49,7 @@
           <a class="js-scroll-trigger" href="#contact">Contact</a>
         </li>
       </ul>
-    </nav>
+    </nav>-->
 
     <!-- Header -->
     <header class="masthead">
@@ -60,11 +60,12 @@
           <em>Try not to blink!</em>
         </h3>
         <a class="btn btn-primary btn-xl" id="startbtn" href="#timerscreen">START</a>
+      
       </div>
       <div class="overlay"></div>
    <div class="container text-center my-auto hidden" id="timerscreen">
        <div class='fullscreenDiv'>
-    <div class="center"><p>  <span id="countdowntimer">10 </span> </p>
+    <div class="center"><p class="timer">  <span id="countdowntimer"> </span> </p>
 </div>
 </div>​
 </div>
@@ -72,15 +73,8 @@
 
     <!-- Section -->
 
-<script type="text/javascript">
-    var timeleft = 10;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-    document.getElementById("countdowntimer").textContent = timeleft;
-    if(timeleft <= 0)
-        clearInterval(downloadTimer);
-    },1000);
-</script>
+
+
 
  <!--
     <! About >
